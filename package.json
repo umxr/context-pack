@@ -1,6 +1,6 @@
 {
   "name": "@umar/context-pack",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "Optimal context window builder for AI agents",
   "type": "module",
   "main": "dist/index.js",

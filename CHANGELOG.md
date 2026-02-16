@@ -1,3 +1,10 @@
+# 1.0.0 (2026-02-16)
+
+
+### Features
+
+* implement context-pack CLI with scoring, packing, and multi-format output ([f92ccbc](https://github.com/umxr/context-pack/commit/f92ccbce51aa0c82a797c8107bb86977e353fbb0))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
