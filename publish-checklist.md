@@ -24,16 +24,33 @@
 
 ## Nice to have
 
-- [ ] **Add GitHub Actions CI** for test/lint/build on push
+- [x] **GitHub Actions CI.** Runs lint, typecheck, build, test on push/PR (Node 20 + 22)
+- [x] **semantic-release.** Automated versioning, CHANGELOG, npm publish, GitHub releases
 - [ ] **Consider `--clipboard` flag** as alternative to `| pbcopy` (cross-platform)
 
 ---
 
-## Publish steps
+## Setup required for releases
+
+Add these secrets to GitHub repo settings (`Settings > Secrets and variables > Actions`):
+
+- **`NPM_TOKEN`** — npm access token with publish permission for `@umar` scope
+  - Create at https://www.npmjs.com/settings/umxr/tokens → "Automation" type
+- **`GITHUB_TOKEN`** — provided automatically by GitHub Actions (no setup needed)
+
+## How releases work
+
+1. Push commits to `main` using conventional commits (`feat:`, `fix:`, `docs:`, etc.)
+2. `semantic-release` analyzes commits since last release
+3. Determines version bump: `feat:` → minor, `fix:` → patch, `BREAKING CHANGE` → major
+4. Updates `CHANGELOG.md`, `package.json` version, creates git tag
+5. Publishes to npm as `@umar/context-pack`
+6. Creates GitHub release with notes
+
+## Manual publish (if needed)
 
 ```bash
-npm login                    # if not already logged in
-npm run build && npm test    # verify everything passes
-npm pack --dry-run           # review what gets published
-npm publish --access public  # scoped packages need --access public on first publish
+npm login
+npm run build && npm test
+npm publish --access public
 ```

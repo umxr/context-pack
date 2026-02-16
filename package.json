@@ -1,6 +1,6 @@
 {
   "name": "@umar/context-pack",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "description": "Optimal context window builder for AI agents",
   "type": "module",
   "main": "dist/index.js",
@@ -26,7 +26,8 @@
     "lint:fix": "biome check --write src/ tests/",
     "format": "biome format --write src/ tests/",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "npm run build && npm test"
+    "prepublishOnly": "npm run build && npm test",
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "context",
@@ -49,7 +50,10 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@types/node": "^25.2.3",
+    "semantic-release": "^25.0.3",
     "tsup": "^8.0.0",
     "tsx": "^4.0.0",
     "typescript": "^5.5.0",
