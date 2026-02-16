@@ -17,15 +17,14 @@
 
 ## Should fix
 
-- [ ] **No end-to-end CLI tests.** Unit tests cover core modules but no tests exercise the actual CLI binary (exit codes, flag combinations, error messages)
-- [ ] **`dist/index.js` only re-exports types.** The library entry point (`main` field) only exports types — consider also exporting core functions (`scanFiles`, `packFiles`, `scoreFiles`) for programmatic use
-- [ ] **`--ai` flag has no test coverage.** The semantic ranker is untested (understandable since it calls an API, but at least test the prompt builder and response parser)
-- [ ] **Config loading not tested.** `src/core/config.ts` has no test file
+- [x] **End-to-end CLI tests.** 14 tests covering exit codes, all output formats, flag combinations, stdin, --out
+- [x] **Library entry point exports core functions.** `scanFiles`, `packFiles`, `scoreFiles`, `loadConfig`, `countTokens`, formatters, and all types
+- [x] **`--ai` flag test coverage.** Tests for `parseRankResponse`, `extractExportNames`, `getFilePreview`, and `buildRankRelevancePrompt`
+- [x] **Config loading tested.** 10 tests: defaults, file loading, overrides, weight merging, invalid JSON, ai config
 
 ## Nice to have
 
 - [ ] **Add GitHub Actions CI** for test/lint/build on push
-- [ ] **Add `npx @umar/context-pack` smoke test** after build to verify the bin works end-to-end
 - [ ] **Consider `--clipboard` flag** as alternative to `| pbcopy` (cross-platform)
 
 ---

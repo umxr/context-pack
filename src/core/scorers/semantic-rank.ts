@@ -13,11 +13,11 @@ type RankResult = {
 	reason: string;
 };
 
-function getFilePreview(content: string, lines = 5): string {
+export function getFilePreview(content: string, lines = 5): string {
 	return content.split("\n").slice(0, lines).join("\n");
 }
 
-function extractExportNames(content: string, language: string): string[] {
+export function extractExportNames(content: string, language: string): string[] {
 	if (language !== "typescript" && language !== "javascript") return [];
 
 	const exports: string[] = [];
@@ -124,7 +124,7 @@ async function callAnthropic(
 	return parseRankResponse(text);
 }
 
-function parseRankResponse(text: string): RankResult[] {
+export function parseRankResponse(text: string): RankResult[] {
 	// Try direct JSON parse
 	try {
 		const parsed = JSON.parse(text);

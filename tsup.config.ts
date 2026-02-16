@@ -12,7 +12,7 @@ export default defineConfig([
 		},
 	},
 	{
-		entry: { index: "src/core/types.ts" },
+		entry: { index: "src/index.ts" },
 		format: ["esm"],
 		dts: true,
 		sourcemap: true,
