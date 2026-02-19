@@ -1,17 +1,17 @@
-# @umar/context-pack
+# @umxr/context-pack
 
 Optimal context window builder for AI agents. Given a task description and a codebase, packs the most relevant files into a token-budgeted context bundle.
 
 ## Install
 
 ```bash
-npm install -g @umar/context-pack
+npm install -g @umxr/context-pack
 ```
 
 Or run directly:
 
 ```bash
-npx @umar/context-pack "fix the login bug" --codebase ./src
+npx @umxr/context-pack "fix the login bug" --codebase ./src
 ```
 
 ## Usage
